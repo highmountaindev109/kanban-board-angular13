@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --white1: #ffffff;
+    --black1: #000000;
+
+    --textgrey: #808184;
+
+    --grey1: #dfe4e9;
+    --grey2: #f0f1f4;
+    --grey3: #F8F8FA;
+}
+
+.board-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.board-details {
+    width: 100%;
+    height: calc(100vh - 68px);
+    background-color: var(--grey2);
+    overflow-x: scroll;
+}
+
+.board-details-list {
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+}
+
+.list-row-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.list-row-container>* {
+    flex: 0 0 auto;
+    /* Prevent shrinking, allow overflow */
+    min-width: 300px;
+    /* Minimum width for each child component for mobile responsiveness */
+}
+
+.no-tickets {
+    text-align: center;
+    font-size: 1.2rem;
+    color: gray;
+}
+
+@media (max-width: 768px) {
+    .list-row-container>* {
+        min-width: 100%;
+    }
+
+    .board-details-list {
+        grid-template-columns: 1fr;
+    }
+}

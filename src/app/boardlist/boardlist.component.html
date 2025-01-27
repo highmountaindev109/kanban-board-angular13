@@ -1,0 +1,18 @@
+<div class="list-container">
+    <div class="list-header">
+        <div class="list-header-left">
+            <div class="list-title">
+                <div class="card-item">
+                    <div class="list-title">
+                        {{this.groupValue}}
+                    </div>
+                </div>
+                <div class="list-card-items">
+                    <div *ngFor="let ticket of tickets">
+                        <app-boardcard [ticket]="ticket"></app-boardcard>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

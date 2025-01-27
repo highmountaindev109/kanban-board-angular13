@@ -1,0 +1,51 @@
+<div class="card-container">
+    <div className="card-id-wrapper">
+        <div className="card-id">
+            {{ ticket.id }}
+        </div>
+    </div>
+    <div class="d-flex">
+        <div class="card-status">
+            <div [ngSwitch]="ticket.status">
+                <div *ngSwitchCase="'Todo'">
+                    <img src="assets/img/To-do.svg" />
+                </div>
+                <div *ngSwitchCase="'In progress'">
+                    <img src="assets/img/in-progress.svg" />
+                </div>
+                <div *ngSwitchCase="'Backlog'">
+                    <img src="assets/img/Backlog.svg" />
+                </div>
+            </div>
+        </div>
+        <div class="card-title">
+            {{ ticket.title }}
+        </div>
+    </div>
+    <div class="card-tag">
+        <div *ngFor="let tags of ticket.tag">
+            <div class="d-flex">
+                <div class="priority" [ngSwitch]="ticket.priority">
+                    <div *ngSwitchCase="4">
+                        <img src="assets/img/SVG - Urgent Priority grey.svg" />
+                    </div>
+                    <div *ngSwitchCase="3">
+                        <img src="assets/img/Img - High Priority.svg" />
+                    </div>
+                    <div *ngSwitchCase="2">
+                        <img src="assets/img/Img - Medium Priority.svg" />
+                    </div>
+                    <div *ngSwitchCase="1">
+                        <img src="assets/img/Img - Low Priority.svg" />
+                    </div>
+                    <div *ngSwitchCase="0">
+                        <img src="assets/img/No-priority.svg" />
+                    </div>
+                </div>
+                <div class="card-tag-box">
+                    <div class="card-tag-title">{{ tags }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

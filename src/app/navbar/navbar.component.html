@@ -1,0 +1,42 @@
+<section class="nav">
+    <div class="nav-container">
+        <div>
+            <div class="nav-disp-btn" (click)="toggleDropdown()">
+                <div class="nav-disp-icon nav-disp-filter">
+                    <img alt="icon" src="../../assets/img/Display.svg" />
+                </div>
+                <div class="nav-disp-heading">
+                    Display
+                </div>
+                <div class="nav-disp-icon nav-disp-drop">
+                    <img alt="icon" src="../../assets/img/down.svg" />
+                </div>
+            </div>
+            <div *ngIf="isDropdownOpen" [ngClass]="['nav-disp-dropdown', isDropdownOpen && 'nav-disp-dropdown-show']">
+                <div class="nav-disp-filters">
+                    <div class="nav-dropdown-category">
+                        Grouping
+                    </div>
+                    <div class="nav-dropdown-selector">
+                        <select class="nav-selector" name="grouping" [ngModel]="selectedValue?.selectedData" (change)="onSelectGroupByChange($event)">
+                            <option value="status">Group by Status</option>
+                            <option value="user">Group by User</option>
+                            <option value="priority">Group by Priority</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="nav-disp-filters">
+                    <div class="nav-dropdown-category">
+                        Ordering
+                    </div>
+                    <div class="nav-dropdown-selector">
+                        <select class="nav-selector" name="ordering" [ngModel]="selectedOrderByValue?.selectedOrderByData" (change)="onSelectOrderByChange($event)">
+                            <option value="priority">Sort by Priority</option>
+                            <option value="title">Sort by Title</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

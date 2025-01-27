@@ -1,0 +1,12 @@
+<div class="board-container">
+    <app-navbar [selectedValue]="selectedValue" [selectedOrderByValue]="selectedOrderByValue"></app-navbar>
+    <section class="board-details">
+        <div class="board-details-list">
+            <div class="list-row-container">
+                <div *ngFor="let groupValue of groupValues">
+                    <app-boardlist [tickets]="getTicketsByGroup(groupValue)" [groupValue]="groupValue"></app-boardlist>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
